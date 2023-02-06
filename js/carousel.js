@@ -41,22 +41,22 @@ const leftBtnElement = document.querySelector('.carosello__arrow.arrow-left')
 
 // console.log(rightBtnElement)
 
-rightBtnElement.addEventListener('click', function () {
-	// console.log('current slide', indiceSlideAttiva)
+// rightBtnElement.addEventListener('click', function () {
+// 	// console.log('current slide', indiceSlideAttiva)
 
-	let slideCorrente = slideElements[indiceSlideAttiva]
-	// togliendo la classe active
-	slideCorrente.classList.remove('active')
+// 	let slideCorrente = slideElements[indiceSlideAttiva]
+// 	// togliendo la classe active
+// 	slideCorrente.classList.remove('active')
 
-	// inremento l'indice
-	indiceSlideAttiva += 1
+// 	// inremento l'indice
+// 	indiceSlideAttiva += 1
 
-	let prossimaSlide = slideElements[indiceSlideAttiva]
-	// aggiungiamo la classe active alla seconda slide
-	prossimaSlide.classList.add('active')
+// 	let prossimaSlide = slideElements[indiceSlideAttiva]
+// 	// aggiungiamo la classe active alla seconda slide
+// 	prossimaSlide.classList.add('active')
 
-	console.log('next slide', indiceSlideAttiva)
-})
+// 	console.log('next slide', indiceSlideAttiva)
+// })
 
 leftBtnElement.addEventListener('click', function () {
 	// console.log('current slide', indiceSlideAttiva)
@@ -76,6 +76,22 @@ leftBtnElement.addEventListener('click', function () {
 })
 
 for(let i =0; i<slides.length; i++){
+	rightBtnElement.addEventListener('click', function () {
+		// console.log('current slide', indiceSlideAttiva)
+	
+		let slideCorrente = slideElements[indiceSlideAttiva]
+		// togliendo la classe active
+		slideCorrente.classList.remove('active')
+	
+		// inremento l'indice
+		indiceSlideAttiva += 1
+	
+		let prossimaSlide = slideElements[indiceSlideAttiva]
+		// aggiungiamo la classe active alla seconda slide
+		prossimaSlide.classList.add('active')
+	
+		console.log('next slide', indiceSlideAttiva)
+	})
 	
 }
 
