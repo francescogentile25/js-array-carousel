@@ -29,69 +29,37 @@ let indiceSlideAttiva = 0
 const slideElements = document.getElementsByClassName('slide')
 // console.log(slideElements)
 
-let firstSlide = slideElements[0]
- // togliendo la classe active
-firstSlide.classList.remove('active')
-
-let secondSlide = slideElements[1]
- // aggiungiamo la classe active alla seconda slide
-secondSlide.classList.add('active')
 const rightBtnElement = document.querySelector('.carosello__arrow.arrow-right')
 const leftBtnElement = document.querySelector('.carosello__arrow.arrow-left')
 
 // console.log(rightBtnElement)
 
-// rightBtnElement.addEventListener('click', function () {
-// 	// console.log('current slide', indiceSlideAttiva)
-
-// 	let slideCorrente = slideElements[indiceSlideAttiva]
-// 	// togliendo la classe active
-// 	slideCorrente.classList.remove('active')
-
-// 	// inremento l'indice
-// 	indiceSlideAttiva += 1
-
-// 	let prossimaSlide = slideElements[indiceSlideAttiva]
-// 	// aggiungiamo la classe active alla seconda slide
-// 	prossimaSlide.classList.add('active')
-
-// 	console.log('next slide', indiceSlideAttiva)
-// })
-
-leftBtnElement.addEventListener('click', function () {
-	// console.log('current slide', indiceSlideAttiva)
-
-	let slideCorrente = slideElements[indiceSlideAttiva]
-	// togliendo la classe active
-	slideCorrente.classList.remove('active')
-
-	// decremento l'indice
-	indiceSlideAttiva -= 1
-
-	let prossimaSlide = slideElements[indiceSlideAttiva]
-	// aggiungiamo la classe active alla seconda slide
-	prossimaSlide.classList.add('active')
-
-	console.log('next slide', indiceSlideAttiva)
-})
-
-for(let i =0; i<slides.length; i++){
-	rightBtnElement.addEventListener('click', function () {
-		// console.log('current slide', indiceSlideAttiva)
-	
+rightBtnElement.addEventListener('click', function () {
+// console.log('current slide', indiceSlideAttiva)
+	if (indiceSlideAttiva < slides.length - 1) { 
 		let slideCorrente = slideElements[indiceSlideAttiva]
 		// togliendo la classe active
 		slideCorrente.classList.remove('active')
-	
 		// inremento l'indice
 		indiceSlideAttiva += 1
-	
 		let prossimaSlide = slideElements[indiceSlideAttiva]
 		// aggiungiamo la classe active alla seconda slide
 		prossimaSlide.classList.add('active')
-	
-		console.log('next slide', indiceSlideAttiva)
-	})
-	
-}
+		// console.log('next slide', indiceSlideAttiva)
+	}
+})
 
+leftBtnElement.addEventListener('click', function () {
+	// console.log('current slide', indiceSlideAttiva)
+	if (indiceSlideAttiva >0) {
+		let slideCorrente = slideElements[indiceSlideAttiva]
+		// togliendo la classe active
+		slideCorrente.classList.remove('active')
+		// decremento l'indice
+		indiceSlideAttiva -= 1
+		let prossimaSlide = slideElements[indiceSlideAttiva]
+		// aggiungiamo la classe active alla seconda slide
+		prossimaSlide.classList.add('active')
+		// console.log('next slide', indiceSlideAttiva)
+	}
+})
